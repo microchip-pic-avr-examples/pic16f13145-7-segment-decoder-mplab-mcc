@@ -144,7 +144,7 @@ The demo below presents the incrementing numbers in hexadecimal between 0 and 0x
 
 ## Summary
 
-This example demonstrates the capabilities of the CLB, a CIP, that can control and manipulate the data in software on a 7-segment display.
+This example demonstrates the capabilities of the CLB, a CIP that can manipulate the data from the software, while also displaying it in a 7-segment LED view.
 
 <br>
 
