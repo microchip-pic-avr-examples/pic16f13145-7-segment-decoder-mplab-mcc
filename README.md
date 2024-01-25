@@ -2,9 +2,9 @@
 
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
-# 7-Segment Display Decoder  — Use Cases for CLB Using the PIC16F13145 Microcontroller with MCC Melody
+# 7-Segment Display Decoder — Use Cases for CLB Using the PIC16F13145 Microcontroller with MCC Melody
 
-This repository provides two MPLAB® X projects for interfacing the Configurable Logic Block (CLB) and I/O Ports peripherals with an 7-segment display to show hexadecimal numbers:
+This repository provides two MPLAB® X projects for interfacing the Configurable Logic Block (CLB) and I/O Ports peripherals with a 7-segment display to show hexadecimal numbers:
 
 - [7-Segment Display Decoder with LUTs](pic16f13145-7-segment-decoder-luts-mplab-mcc.X)
 - [7-Segment Display Decoder with Logic Gates](pic16f13145-7-segment-decoder-gates-mplab-mcc.X)
@@ -26,7 +26,7 @@ More details and code examples on the PIC16F13145 can be found at the following 
 ## Software Used
 
 - [MPLAB X IDE v6.15 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
-- [MPLAB® XC8 v2.45 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
+- [MPLAB XC8 v2.45 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
 - [PIC16F1xxxx_DFP v1.23.382 or newer](https://packs.download.microchip.com/)
 
 ## Hardware Used
@@ -52,7 +52,7 @@ This application includes two different solutions through the CLB peripheral. Th
 
 <br><img src="images/common-cathode-7-segment.png" width="600">
 
-The table below presents the truth table to correctly display hexadecimal number on a 7-segment display, depending of input values.
+The table below presents the truth table that correctly displays the hexadecimal number on a 7-segment display, depending on the input values.
 
 |           |   **In**  |           |           |       |       |       | **Out** |       |       |       | **Displayed Number** |
 |:---------:|:---------:|:---------:|:---------:|:-----:|:-----:|:-----:|:-------:|:-----:|:-----:|:-----:|:--------------------:|
@@ -87,7 +87,7 @@ The second project is defined by the CLB that configures only logic gates (NOT, 
 
 ## Setup 
 
-The following peripheral and clock configurations are set up using MPLAB® Code Configurator (MCC) Melody for the PIC16F13145:
+The following peripheral and clock configurations are set up using MPLAB Code Configurator (MCC) Melody for the PIC16F13145:
 
 1. Configurations Bits:
     - CONFIG1:
@@ -134,7 +134,7 @@ The following peripheral and clock configurations are set up using MPLAB® Code 
 
 ## Demo
 
-The demo below present the incrementing numbers in hexadecimal between 0 and 0xF (hexadecimal values) that are shown on the 7-segment display. The 330 Ohm resistors are needed for current limiting between each LED and I/O pins of the microcontroller.
+The demo below presents the incrementing numbers in hexadecimal between 0 and 0xF (hexadecimal values) that are shown on the 7-segment display. The 330 Ohm resistors are needed for current limiting between each LED and I/O pins of the microcontroller.
 
 <br><img src="images/demo.gif" width="600">
 
