@@ -7,7 +7,9 @@
  * 
  * @brief This file contains the API prototype for the System Driver.
  *
- * @version Driver Version 2.0.2
+ * @version Driver Version 2.0.3
+ *
+ * @version Package Version 4.1.4
 */
 
 /*
@@ -47,10 +49,14 @@
 
 /**
  * @ingroup systemdriver
- * @brief Initializes the system module. This is called only once before calling other APIs.
+ * @brief Initializes the system module.
+ * This routine is called only once during system initialization, before calling other APIs.
  * @param None.
  * @return None.
 */
 void SYSTEM_Initialize(void);
 
-#endif //SYSTEM_H
+#endif	/* SYSTEM_H */
+/**
+ End of File
+*/
