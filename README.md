@@ -20,7 +20,7 @@ More details and code examples on the PIC16F13145 can be found at the following 
 - [PIC16F13145 Product Page](https://www.microchip.com/en-us/product/PIC16F13145?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
 - [PIC16F13145 Code Examples on Discover](https://mplab-discover.microchip.com/v2?dsl=PIC16F13145)
 - [PIC16F13145 Code Examples on GitHub](https://github.com/microchip-pic-avr-examples/?q=PIC16F13145)
-- [7-Segment Display Datasheet](https://www.farnell.com/datasheets/1918247.pdf)
+- [7-Segment Display Data Sheet](https://www.farnell.com/datasheets/1918247.pdf)
 
 ## Software Used
 
@@ -46,7 +46,7 @@ To program the Curiosity Nano board with this MPLAB X project, follow the steps 
 
 This example demonstrates the capabilities of the CLB, a Core Independent Peripheral (CIP), that can control and manipulate the transmitted data through the I/O Ports for the Software Input Register of the CLB (CLBSWIN). This software register is incremented with 1 after each iteration, between 0 and 15, values that are displayed in hexadecimal on the display.
 
-This application includes two different solutions through the CLB peripheral. The first application uses 7 different LUT embedded circuits for each pin of the display, and the second one uses only logic gates: AND, NOT, OR. Both implementations present the same result. The used display is Common Cathode, and in this type of display, all the cathode connections of the LED segments are connected together to logic `0` or ground. The separate segments are lightened by applying the logic `1` or HIGH signal through a current limiting resistor to forward bias the individual anode terminals `a` to `g`, as below.
+This application includes two different solutions through the CLB peripheral. The first application uses seven different Look-up Table (LUT) embedded circuits for each pin of the display, and the second one uses only logic gates: AND, NOT, OR. Both implementations present the same result. The used display is Common Cathode, and in this type of display, all the cathode connections of the LED segments are connected together to logic `0` or ground. The separate segments are lightened by applying the logic `1` or HIGH signal through a current limiting resistor to forward bias the individual anode terminals `a` to `g`, as below.
 
 <br><img src="images/common-cathode-7-segment.png" width="600">
 
@@ -74,11 +74,11 @@ The table below presents the truth table that correctly displays the hexadecimal
 
 <br> Both projects implement the logic of the 7-segment decoder using the CLB peripheral, but in two different manners. The main idea of the application is to display all the hexadecimal values on a 7-segment display, using software data from the main project interfaced with the CLB.
 
-<br> The first project is described by 7 LUTs circuits as in the figure below. Each LUT is corresponding to one of the inputs of the 7-segment display, called from `a` to `f`, and its value is `1` or `0`, according to the table above.
+<br> The first project is described by seven LUTs circuits as in the figure below. Each LUT corresponds to one of the inputs of the 7-segment display, called from `a` to `f`, and its value is `1` or `0`, according to the table above.
 
 <br><img src="images/7-segment-luts-diagram.png" width="1000">
 
-The second project is defined by the CLB that configures only logic gates (NOT, AND, OR) and presents a higher complexity than the first project. Each final output of the logic gates is corresponding to one of the inputs of the 7-segment display, called from `a` to `f`, and its value is `1` or `0`, according to the table above.
+The second project is defined by the CLB that configures only logic gates (NOT, AND, OR) and presents a higher complexity than the first project. Each final output of the logic gates corresponds to one of the inputs of the 7-segment display, called from `a` to `f`, and its value is `1` or `0`, according to the table above.
 
 <br><img src="images/7-segment-gates-diagram.png" width="1000">
 
@@ -135,7 +135,7 @@ The following peripheral and clock configurations are set up using MPLAB Code Co
 
 ## Demo
 
-The demo below presents the incrementing numbers in hexadecimal between 0 and 0xF (hexadecimal values) that are shown on the 7-segment display. The 330 Ohm resistors are needed for current limiting between each LED and I/O pins of the microcontroller.
+The demo below presents the incrementing numbers in hexadecimal between 0 and 0xF (hexadecimal values) that are shown on the 7-segment display. The 330 Ohm resistors are needed to limit the current between each LED and I/O pins of the microcontroller.
 
 <br><img src="images/demo.gif" width="600">
 
