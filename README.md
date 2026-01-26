@@ -1,6 +1,12 @@
 <!-- Please do not change this html logo with link -->
 
-<a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
+<a target="_blank" href="https://www.microchip.com/" id="top-of-page">
+   <picture>
+      <source media="(prefers-color-scheme: light)" srcset="images/mchp_logo_light.png" width="350">
+      <source media="(prefers-color-scheme: dark)" srcset="images/mchp_logo_dark.png" width="350">
+      <img alt="Microchip Technologies Inc." src="https://www.microchip.com/content/experience-fragments/mchp/en_us/site/header/master/_jcr_content/root/responsivegrid/header/logo.coreimg.100.300.png/1605828081463/microchip.png">
+   </picture>
+</a>
 
 # 7-Segment Display Decoder — Use Cases for CLB Using the PIC16F13145 Microcontroller with MCC Melody
 
@@ -24,9 +30,11 @@ More details and code examples on the PIC16F13145 can be found at the following 
 
 ## Software Used
 
-- [MPLAB X IDE v6.20 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
-- [MPLAB XC8 v2.46 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
-- [PIC16F1xxxx_DFP v1.25.389 or newer](https://packs.download.microchip.com/)
+- [MPLAB X IDE v6.30 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08) or [MPLAB® Tools for VS Code®](https://www.microchip.com/en-us/tools-resources/develop/mplab-tools-vs-code?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
+- [MPLAB XC8 v3.10 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
+- [PIC16F1xxxx_DFP v1.29.444 or newer](https://packs.download.microchip.com/)
+
+**Important:** The current version features an update to the CLB peripheral, which now includes the CLB Synthesizer Library. For migration details and required changes, refer to the [_Troubleshooting MCC Melody Configurable Logic Block (CLB) Projects Configured With CLB v1.x.x_](https://onlinedocs.microchip.com/oxy/GUID-9438FEC3-C80B-4328-8A8E-2531EDEE6155-en-US-1/index.html) migration guide documentation.
 
 ## Hardware Used
 
@@ -87,7 +95,6 @@ The second project is defined by the CLB that configures only logic gates (NOT, 
 The following peripheral and clock configurations are set up using MPLAB Code Configurator (MCC) Melody for the PIC16F13145:
 
 1. Configurations Bits:
-
    - CONFIG1:
      - External Oscillator mode selection bits: Oscillator not enabled
      - Power-up default value for COSC bits: HFINTOSC (1MHz)
@@ -100,28 +107,21 @@ The following peripheral and clock configurations are set up using MPLAB Code Co
        <br><img src="images/mcc_config_bits_3.png" width="400">
 
 2. Clock Control:
-
    - Clock Source: HFINTOSC
    - HF Internal Clock: 4_MHz
    - Clock Divider: 1
      <br><img src="images/mcc_clock_control.png" width="400">
 
 3. CLB1:
-
    - Enable CLB: Enabled
    - Clock Selection: HFINTOSC
-   - Clock Divider: Divide clock source by 4
+   - Clock Divider: Divide clock source by 1
      <br><img src="images/mcc_clb.png" width="400">
 
 4. CRC:
-
    - Auto-configured by CLB
 
-5. NVM:
-
-   - Auto-configured by CLB
-
-6. Pin Grid View:
+5. Pin Grid View:
    - CLBPPSOUT0: RC0 (Signal to "a" pin of the display)
    - CLBPPSOUT1: RC1 (Signal to "b" pin of the display)
    - CLBPPSOUT2: RC2 (Signal to "c" pin of the display)

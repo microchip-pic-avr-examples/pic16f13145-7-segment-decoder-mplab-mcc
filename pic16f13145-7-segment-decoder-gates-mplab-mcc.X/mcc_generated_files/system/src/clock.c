@@ -7,11 +7,13 @@
  * 
  * @brief This file contains the API prototypes for the Clock driver.
  *
- * @version Driver Version 2.0.3
+ * @version Driver Version 2.0.4
+ *
+ * @version Package Version 4.3.7
 */
 
 /*
-© [2024] Microchip Technology Inc. and its subsidiaries.
+© [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -37,16 +39,17 @@
 void CLOCK_Initialize(void)
 {
     // Set the CLOCK CONTROL module to the options selected in the user interface.
-    //NDIV 1; NOSC HFINTOSC; 
-    OSCCON1 = 0x60;
-    //CSWHOLD may proceed; 
-    OSCCON3 = 0x0;
-    //EXTOEN disabled; HFOEN disabled; MFOEN disabled; LFOEN disabled; ADOEN disabled; PLLEN disabled; 
-    OSCEN = 0x0;
-    //HFFRQ 4_MHz; 
-    OSCFRQ = 0x2;
-    //TUN undefined; 
-    OSCTUNE = 0x0;
+    OSCCON1 = (0 << _OSCCON1_NDIV_POSN)   // NDIV 1
+        | (6 << _OSCCON1_NOSC_POSN);  // NOSC HFINTOSC
+    OSCCON3 = (0 << _OSCCON3_CSWHOLD_POSN);  // CSWHOLD may proceed
+    OSCEN = (0 << _OSCEN_EXTOEN_POSN)   // EXTOEN disabled
+        | (0 << _OSCEN_HFOEN_POSN)   // HFOEN disabled
+        | (0 << _OSCEN_MFOEN_POSN)   // MFOEN disabled
+        | (0 << _OSCEN_LFOEN_POSN)   // LFOEN disabled
+        | (0 << _OSCEN_ADOEN_POSN)   // ADOEN disabled
+        | (0 << _OSCEN_PLLEN_POSN);  // PLLEN disabled
+    OSCFRQ = (2 << _OSCFRQ_FRQ_POSN);  // FRQ 4_MHz
+    OSCTUNE = (0 << _OSCTUNE_TUN_POSN);  // TUN 0x0
 
 }
 /**

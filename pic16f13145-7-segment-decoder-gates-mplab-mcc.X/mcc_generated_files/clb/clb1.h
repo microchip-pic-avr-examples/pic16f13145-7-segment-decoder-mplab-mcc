@@ -8,10 +8,10 @@
  *
  * @brief This file contains the prototypes and other data types for the CLB1 driver
  *
- * @version CLB1 Driver Version 1.1.0
+ * @version CLB1 Driver Version 1.1.1
 */
 /*
-© [2024] Microchip Technology Inc. and its subsidiaries.
+© [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -35,7 +35,6 @@
 #define CLB1_H
 
 #define BITSTREAM_SIZE 102UL
-
 /**
   Section: Included Files
 */
@@ -49,7 +48,7 @@
 
 /**
  * @ingroup clb1
- * @brief  Initializes the clb1 and it must be called before any other routine is called.
+ * @brief  Initializes the CLB1 and it must be called before any other routine is called.
  * @param None.
  * @return None.
  */ 

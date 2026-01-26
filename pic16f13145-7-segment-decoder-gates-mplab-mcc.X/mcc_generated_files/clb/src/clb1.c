@@ -7,10 +7,10 @@
  *
  * @brief This file contains the implementation of public and private functions for the CLB1 driver.
  *
- * @version CLB1 Driver Version 1.1.0
+ * @version CLB1 Driver Version 1.1.1
 */
 /*
-© [2024] Microchip Technology Inc. and its subsidiaries.
+© [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -45,59 +45,59 @@ extern uint16_t end_clb_config;
 void CLB1_Initialize(void)
 {
     /* Disable CLB */
-    CLBCONbits.CLBEN = 0;
+    CLBCONbits.CLBEN = 0U;
 
     //Load the bitstream
     CLB1_Configure((uint16_t) &start_clb_config);
 
     /* CLK HFINTOSC; */
-    CLBCLK = 0x6;
+    CLBCLK = (uint8_t) 0x6;
 
     /* OESEL0 0; OESEL1 0; */
-    CLBPPSCON1 = 0x0;
+    CLBPPSCON1 = (uint8_t) 0x0;
 
     /* OESEL2 0; OESEL3 0; */
-    CLBPPSCON2 = 0x0;
+    CLBPPSCON2 = (uint8_t) 0x0;
 
     /* OESEL4 0; OESEL5 0; */
-    CLBPPSCON3 = 0x0;
+    CLBPPSCON3 = (uint8_t) 0x0;
 
     /* OESEL6 0; OESEL7 0; */
-    CLBPPSCON4 = 0x0;
+    CLBPPSCON4 = (uint8_t) 0x0;
 
     // Clearing CLB1I0 IF flag.
-    PIR7bits.CLB1IF0 = 0;
+    PIR7bits.CLB1IF0 = 0U;
     // Disabled CLB1I0 CLB1 interrupt
-    PIE7bits.CLB1IE0 = 0;
+    PIE7bits.CLB1IE0 = 0U;
 
     // Clearing CLB1I1 IF flag.
-    PIR7bits.CLB1IF1 = 0;
+    PIR7bits.CLB1IF1 = 0U;
     // Disabled CLB1I1 CLB1 interrupt
-    PIE7bits.CLB1IE1 = 0;
+    PIE7bits.CLB1IE1 = 0U;
 
     // Clearing CLB1I2 IF flag.
-    PIR7bits.CLB1IF2 = 0;
+    PIR7bits.CLB1IF2 = 0U;
     // Disabled CLB1I2 CLB1 interrupt
-    PIE7bits.CLB1IE2 = 0;
+    PIE7bits.CLB1IE2 = 0U;
 
     // Clearing CLB1I3 IF flag.
-    PIR7bits.CLB1IF3 = 0;
+    PIR7bits.CLB1IF3 = 0U;
     // Disabled CLB1I3 CLB1 interrupt
-    PIE7bits.CLB1IE3 = 0;
+    PIE7bits.CLB1IE3 = 0U;
 
     /* EN enabled; */
-    CLBCON = 0x80;
+    CLBCONbits.CLBEN = 0x1U;
 
 }
 
 void CLB1_Enable(void)
 {
-    CLBCONbits.CLBEN = 1;
+    CLBCONbits.CLBEN = 1U;
 }
 
 void CLB1_Disable(void)
 {
-    CLBCONbits.CLBEN = 0;
+    CLBCONbits.CLBEN = 0U;
 }
 
 inline bool CLB1_IsCLBSWINBusy(void)
