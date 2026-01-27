@@ -35,16 +35,9 @@
 #define CLB1_H
 
 #define BITSTREAM_SIZE 102UL
-/**
-  Section: Included Files
-*/
 
 #include <stdbool.h>
 #include <stdint.h>
-
-/**
-  Section: CLB1 APIs
-*/
 
 /**
  * @ingroup clb1
@@ -56,7 +49,7 @@ void CLB1_Initialize(void);
 
 /**
  * @ingroup clb1
- * @brief Enables CLB1.
+ * @brief Enables the CLB1.
  * @pre CLB1_Initialize() is already called.
  * @param None.
  * @return None.
@@ -65,7 +58,7 @@ void CLB1_Enable(void);
 
 /**
  * @ingroup clb1
- * @brief Disables CLB1.
+ * @brief Disables the CLB1.
  * @param None.
  * @return None.
  */
@@ -73,7 +66,7 @@ void CLB1_Disable(void);
 
 /**
  * @ingroup clb1
- * @brief Configures CLB1.
+ * @brief Configures the CLB1.
  * @param uint16_t start_address.
  * @return None.
  */
@@ -82,7 +75,7 @@ void CLB1_Configure(uint16_t start_address);
 /**
  * @ingroup clb1
  * @brief Writes the data into the CLB Data registers.
- * @param uint8_t data - CLB input data.
+ * @param data - CLB input data.
  * @return None.
  */
 void CLB1_SWIN_Write8(uint8_t data);
@@ -90,7 +83,7 @@ void CLB1_SWIN_Write8(uint8_t data);
 /**
  * @ingroup clb1
  * @brief Writes the data into the CLB Data registers.
- * @param uint16_t data - CLB input data.
+ * @param data - CLB input data.
  * @return None.
  */
 void CLB1_SWIN_Write16 (uint16_t data);
@@ -98,7 +91,7 @@ void CLB1_SWIN_Write16 (uint16_t data);
 /**
  * @ingroup clb1
  * @brief Writes the data into the CLB Data registers.
- * @param uint32_t data - CLB input data.
+ * @param data - CLB input data.
  * @return None.
  */
 void CLB1_SWIN_Write32 (uint32_t data);

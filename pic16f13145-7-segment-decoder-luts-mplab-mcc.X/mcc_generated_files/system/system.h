@@ -40,11 +40,11 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "config_bits.h"
-#include "../clb/clb1.h"
 #include "../system/pins.h"
 #include "../crc/crc.h"
 #include "../system/interrupt.h"
 #include "../system/clock.h"
+#include "../clb/clb1.h"
 
 /**
  * @ingroup systemdriver
