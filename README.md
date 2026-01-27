@@ -8,7 +8,7 @@
    </picture>
 </a>
 
-# 7-Segment Display Decoder — Use Cases for CLB Using the PIC16F13145 Microcontroller with MCC Melody
+# 7-Segment Display Decoder — Use Cases for CLB Using the PIC16F13145 Microcontroller With MCC Melody
 
 This repository provides two MPLAB® X projects for interfacing the Configurable Logic Block (CLB) and I/O Ports peripherals with a 7-segment display to show hexadecimal numbers:
 
@@ -30,8 +30,8 @@ More details and code examples on the PIC16F13145 can be found at the following 
 
 ## Software Used
 
-- [MPLAB X IDE v6.30 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08) or [MPLAB® Tools for VS Code®](https://www.microchip.com/en-us/tools-resources/develop/mplab-tools-vs-code?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
-- [MPLAB XC8 v3.10 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
+- [MPLAB® X IDE v6.30 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08) or [MPLAB® Tools for VS Code®](https://www.microchip.com/en-us/tools-resources/develop/mplab-tools-vs-code?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
+- [MPLAB® XC8 v3.10 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC16F13145&utm_content=pic16f13145-7-segment-decoder-mplab-mcc&utm_bu=MCU08)
 - [PIC16F1xxxx_DFP v1.29.444 or newer](https://packs.download.microchip.com/)
 
 **Important:** The current version features an update to the CLB peripheral, which now includes the CLB Synthesizer Library. For migration details and required changes, refer to the [_Troubleshooting MCC Melody Configurable Logic Block (CLB) Projects Configured With CLB v1.x.x_](https://onlinedocs.microchip.com/oxy/GUID-9438FEC3-C80B-4328-8A8E-2531EDEE6155-en-US-1/index.html) migration guide documentation.
@@ -44,7 +44,7 @@ More details and code examples on the PIC16F13145 can be found at the following 
 - 7-Segment Display
   <br><img src="images/7-segment-display.png" width="400">
 
-- 7 x 330 Ohm Resistors
+- 7 x 330Ω Resistors
 
 ## Operation
 
@@ -54,7 +54,7 @@ To program the Curiosity Nano board with this MPLAB X project, follow the steps 
 
 This example demonstrates the capabilities of the CLB, a Core Independent Peripheral (CIP), that can control and manipulate the transmitted data through the I/O Ports for the Software Input Register of the CLB (CLBSWIN). This software register is incremented with 1 after each iteration, between 0 and 15, values that are displayed in hexadecimal on the display.
 
-This application includes two different solutions through the CLB peripheral. The first application uses seven different Look-up Table (LUT) embedded circuits for each pin of the display, and the second one uses only logic gates: AND, NOT, OR. Both implementations present the same result. The used display is Common Cathode, and in this type of display, all the cathode connections of the LED segments are connected together to logic `0` or ground. The separate segments are lightened by applying the logic `1` or HIGH signal through a current limiting resistor to forward bias the individual anode terminals `a` to `g`, as below.
+This application includes two different solutions through the CLB peripheral. The first application uses seven different Look-up Tables (LUTs) embedded circuits for each pin of the display, and the second one uses only logic gates: AND, NOT, OR. Both implementations present the same result. The used display is Common Cathode and, in this type of display, all the cathode connections of the LED segments are connected together to logic ‘`0`’ or ground. The separate segments are lightened by applying the logic ‘`1`’ or HIGH signal through a current limiting resistor to forward bias the individual anode terminals `a` to `g`, as shown below.
 
 <br><img src="images/common-cathode-7-segment.png" width="600">
 
@@ -82,11 +82,11 @@ The table below presents the truth table that correctly displays the hexadecimal
 
 <br> Both projects implement the logic of the 7-segment decoder using the CLB peripheral, but in two different manners. The main idea of the application is to display all the hexadecimal values on a 7-segment display, using software data from the main project interfaced with the CLB.
 
-<br> The first project is described by seven LUTs circuits as in the figure below. Each LUT corresponds to one of the inputs of the 7-segment display, called from `a` to `f`, and its value is `1` or `0`, according to the table above.
+<br> The first project is described by seven LUTs circuits as in the figure below. Each LUT corresponds to one of the inputs of the 7-segment display, called from `a` to `f`, and its value is ‘`1`’ or ‘`0`’, according to the table above.
 
 <br><img src="images/7-segment-luts-diagram.png" width="1000">
 
-The second project is defined by the CLB that configures only logic gates (NOT, AND, OR) and presents a higher complexity than the first project. Each final output of the logic gates corresponds to one of the inputs of the 7-segment display, called from `a` to `f`, and its value is `1` or `0`, according to the table above.
+The second project is defined by the CLB that configures only logic gates (NOT, AND, OR) and presents a higher complexity than the first project. Each final output of the logic gates corresponds to one of the inputs of the 7-segment display, called from `a` to `f`, and its value is ‘`1`’ or ‘`0`’, according to the table above.
 
 <br><img src="images/7-segment-gates-diagram.png" width="1000">
 
@@ -135,7 +135,7 @@ The following peripheral and clock configurations are set up using MPLAB Code Co
 
 ## Demo
 
-The demo below presents the incrementing numbers in hexadecimal between 0 and 0xF (hexadecimal values) that are shown on the 7-segment display. The 330 Ohm resistors are needed to limit the current between each LED and I/O pins of the microcontroller.
+The demo below presents the incrementing numbers in hexadecimal between 0 and 0xF (hexadecimal values) that are shown on the 7-segment display. The 330Ω resistors are needed to limit the current between each LED and I/O pins of the microcontroller.
 
 <br><img src="images/demo.gif" width="600">
 
@@ -151,23 +151,23 @@ This example demonstrates the capabilities of the CLB, a CIP that can manipulate
 
 ## How to Program the Curiosity Nano Board
 
-This chapter demonstrates how to use the MPLAB X IDE to program a PIC® device with an Example_Project.X. This is applicable to other projects.
+This chapter demonstrates how to use the MPLAB X IDE to program a PIC® device with an `Example_Project.X`. This is applicable to other projects.
 
 1.  Connect the board to the PC.
 
-2.  Open the Example_Project.X project in MPLAB X IDE.
+2.  Open the `Example_Project.X` project in MPLAB X IDE.
 
-3.  Set the Example_Project.X project as main project.
-    <br>Right click the project in the **Projects** tab and click **Set as Main Project**.
+3.  Set the `Example_Project.X` project as main project.
+    <br>Right click the project in the **Projects** tab and click Set as Main Project.
     <br><img src="images/Program_Set_as_Main_Project.png" width="600">
 
-4.  Clean and build the Example_Project.X project.
-    <br>Right click the **Example_Project.X** project and select **Clean and Build**.
+4.  Clean and build the `Example_Project.X` project.
+    <br>Right click the `Example_Project.X` project and select Clean and Build.
     <br><img src="images/Program_Clean_and_Build.png" width="600">
 
-5.  Select **PICxxxxx Curiosity Nano** in the Connected Hardware Tool section of the project settings:
+5.  Select **PICxxxxx Curiosity Nano** in the **Connected Hardware Tool** section of the project settings:
     <br>Right click the project and click **Properties**.
-    <br>Click the arrow under the Connected Hardware Tool.
+    <br>Click the arrow under the **Connected Hardware Tool**.
     <br>Select **PICxxxxx Curiosity Nano** (click the **SN**), click **Apply** and then click **OK**:
     <br><img src="images/Program_Tool_Selection.png" width="600">
 
